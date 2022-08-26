@@ -4,9 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
     <link rel="stylesheet" href="style.css" />
-    
+    <title>Document</title>
   </head>
   <body>
     <!--LOGO-->
@@ -16,28 +15,36 @@
       <!--NAVBAR-->
       <nav>
         <a href="./index.html" class="active">Home</a>
-        <a href="cart.html">Cart: <span>5</span></a>
+        <a href="#">Cart: <span id="numshopping">0</span></a>
       </nav>
 
       <!--PRODUCTS SECTION-->
       <section class="products" id="products">
         <div class="product">
-          
+          <div class="product__img">
+            <img
+              src="https://www.istore.co.za/media/catalog/product/m/a/macbook_pro_space_grey-1_2.png?format=jpeg"
+              alt=""
+            />
+          </div>
 
-          <div class="produ ct__name">Computer</div>
+          <div class="product__name">Computer</div>
           <div class="product__rate">
             <span>*</span><span>*</span><span>*</span><span>*</span>
           </div>
-          <div class="product__price"><span>2000</span></div>
-          <button>+ ADD TO CART</button>
+          <div class="product__price">R <span>2000</span></div>
+          <button onclick="show()">+ ADD TO CART</button>
         </div>
       </section>
+      <br>
+      <hr>
+      <br>
+      <h2 class="list">charset item here...</h2>
     </div>
+    
 
-    <br>
-    <br>
-<h2 class="Cart">Cart item here...</h2>
-   
+
+    <!--JAVASCRIPT-->
     <script src="./script.js"></script>
   </body>
 </html>
