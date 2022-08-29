@@ -79,7 +79,7 @@ function show(){
 }
 
 // DISPLAY PRODUCTS IN HOME PAGE
-function homeDisplayProducts() {
+function homeshowProducts() {  ``
     products.innerHTML = ""
   // loop into productsState and display
   for (let i = 0; i < productsState.length; i++) {
@@ -107,4 +107,4 @@ function homeDisplayProducts() {
 
 
 // CALL THE DISPLAY FUNCTION
-homeDisplayProducts()
+homeshowProducts()
