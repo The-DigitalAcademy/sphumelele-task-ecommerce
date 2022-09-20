@@ -68,18 +68,21 @@ var productsState = [
 
 
 // LINK JS TO HTML ELEMENT
-const products = document.getElementById("products")
-var numshopping = document.getElementById("numshopping")
+const products = document.getElementById('products')
+var productpic = document.getElementById('productpic')
+var showdis = []
 
-let countnum =0;
 
 function show(){
-  numshopping = document.getElementById("numshopping").innerHTML = ++ countnum;
-
+  numshopping = document.getElementById('numshopping')
+    showdis.push(numshopping);
+  homeshowProducts();
+  disshow();
+  
 }
 
 // DISPLAY PRODUCTS IN HOME PAGE
-function homeshowProducts() {  ``
+function homeshowProducts() { 
     products.innerHTML = ""
   // loop into productsState and display
   for (let i = 0; i < productsState.length; i++) {
@@ -103,8 +106,36 @@ function homeshowProducts() {  ``
     `
     
   }
+  
+}
+function disshow(){
+  productpic.innerHTML = ""
+  // loop into productsState and display
+  for (let i = 0; i < showdis.length; i++) {
+    productpic.innerHTML += `
+    
+    <div class="product">
+        <div class="product__img">
+            <img
+              src="${showdis[i].image}"
+              alt=""
+            />
+        </div>
+            <div class="product__name">${showdis[i].name}</div>
+              <div class="product__rate">
+                ${'<span>*</span>'.repeat(showdis[i].rates)}
+              </div>
+              <div class="product__price">R <span>${showdis[i].price}</span></div> 
+                 
+          </div>
+    
+    `
+    
+  }
+  numshopping.innerHTML = showdis.length;
 }
 
+homeshowProducts();
+disshow();
 
 // CALL THE DISPLAY FUNCTION
-homeshowProducts()
