@@ -2,83 +2,86 @@
 var productsState = [
   {
     id: 1,
-    name: 'Macbook Pro',
-    price: 28000,
-    rates: 5,
+    name: '',
+    price: 2800000,
+    rates: 3,
     image:
-      'https://www.istore.co.za/media/catalog/product/m/a/macbook_pro_space_grey-1_2.png?format=jpeg',
+      'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/brewster-mcleod-architects-1486154143.jpg' ,
   },
   {
     id: 2,
-    name: 'Iphone 13 Pro',
-    price: 23000,
+    name: '',
+    price: 2300000,
     rates: 3,
     image:
-      'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80',
+      'https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/home-improvement/wp-content/uploads/2022/07/download-23.jpg',
   },
   {
     id: 1,
-    name: 'Iphone 6 C',
-    price: 7000,
+    name: '',
+    price: 700000,
     rates: 2,
     image:
-      'https://images.unsplash.com/photo-1565849904461-04a58ad377e0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=736&q=80',
+      'https://images.adsttc.com/media/images/5ecd/d4ac/b357/65c6/7300/009d/large_jpg/02C.jpg?1590547607',
   },
   {
     id: 1,
-    name: 'HP Laptop',
-    price: 8000,
+    name: '',
+    price: 8000000,
     rates: 1,
     image:
-      'https://images.unsplash.com/photo-1589561084283-930aa7b1ce50?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1631&q=80',
+      'https://www.portnews.com.au/images/transform/v1/crop/frm/38YbjLjtVg4TfuAWfqQmftU/1cc5c609-2488-4787-bb55-a7dd729f2332.jpg/r0_0_4928_3280_w1200_h678_fmax.jpg',
   },
   {
     id: 1,
-    name: 'Dell Laptop',
-    price: 4000,
+    name: '',
+    price: 4000000,
     rates: 1,
     image:
-      'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
+      'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/modern-house-2-1538579843.jpg?crop=1.00xw:0.731xh;0,0.264xh&resize=480:*',
   },
   {
     id: 1,
-    name: 'Macbook Pro',
-    price: 15000,
+    name: '',
+    price: 1500000,
     rates: 5,
     image:
-      'https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
+      'https://www.airtasker.com/blog/wp-content/uploads/2019/09/shutterstock_48352354.jpg',
   },
   {
     id: 1,
-    name: 'Playstation 5',
-    price: 20000,
+    name: '',
+    price: 2000000,
     rates: 4,
     image:
-      'https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
+      'https://wpmedia.roomsketcher.com/content/uploads/2022/01/06154409/Modern-house-avi-werd-unsplash.jpg',
   },
   {
     id: 1,
-    name: 'PS 4 Joystick',
-    price: 1200,
+    name: '',
+    price: 1200000,
     rates: 3,
     image:
-      'https://images.unsplash.com/photo-1592840496694-26d035b52b48?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=825&q=80',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIMX_pTfqQcaBKGSjbNgf73YG1QkFbYn6Hfg&usqp=CAU',
   },
 ]
 
+var showdis = []
 
 // LINK JS TO HTML ELEMENT
 const products = document.getElementById('products')
-var productpic = document.getElementById('productpic')
-var showdis = []
+const productpic = document.getElementById('productpic');
+const ADD = document.getElementById('ADD')
 
+function show(i){
+    showdis.push(productsState[i])
+    numshopping = document.getElementById('numshopping')
 
-function show(){
-  numshopping = document.getElementById('numshopping')
-    showdis.push(numshopping);
-  homeshowProducts();
-  disshow();
-  
+    disshow()
+
+  homeshowProducts() 
+
+  calculate() 
 }
 
 // DISPLAY PRODUCTS IN HOME PAGE
@@ -100,20 +103,21 @@ function homeshowProducts() {
                 ${'<span>*</span>'.repeat(productsState[i].rates)}
               </div>
               <div class="product__price">R <span>${productsState[i].price}</span></div> 
-                <button onclick="show()">+ ADD TO CART</button> 
+                <button onclick="show(${i})">+ ADD TO CART</button> 
           </div>
-    
     `
     
   }
+  numshopping.innerHTML = showdis.length;
   
 }
+
 function disshow(){
   productpic.innerHTML = ""
   // loop into productsState and display
   for (let i = 0; i < showdis.length; i++) {
     productpic.innerHTML += `
-    
+  
     <div class="product">
         <div class="product__img">
             <img
@@ -125,17 +129,41 @@ function disshow(){
               <div class="product__rate">
                 ${'<span>*</span>'.repeat(showdis[i].rates)}
               </div>
-              <div class="product__price">R <span>${showdis[i].price}</span></div> 
-                 
+              <div class="product__price">R <span>${showdis[i].price}</span></div>
+             <button onclick="clearAll(${i})">remove</button>  
           </div>
-    
     `
-    
+   
   }
-  numshopping.innerHTML = showdis.length;
+  
+ 
 }
 
-homeshowProducts();
-disshow();
+function clearAll(i) {
+  showdis.splice(i,1)
 
+  disshow()
+  
+  homeshowProducts()
+
+  calculate() 
+}
+
+ADD.innerHTML = showdis.length
+
+function calculate() {
+   total = 0;
+
+  for (let i = 0; i <showdis .length; i++) {
+  
+    total += showdis[i].price;
+
+    document.getElementById('ADD').innerHTML = total;
+    
+  }
+}
+
+disshow()
 // CALL THE DISPLAY FUNCTION
+homeshowProducts()
+calculate()
